@@ -1,0 +1,1 @@
+Shape & Form contain simple sketches that are used for revision and to go over some important concepts of the basics fo programming. Namely, the primitive shapes for drawing, variables and functions. 
