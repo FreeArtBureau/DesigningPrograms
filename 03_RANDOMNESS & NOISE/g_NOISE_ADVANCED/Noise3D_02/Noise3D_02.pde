@@ -1,11 +1,10 @@
   ///////////////////////////////////////
-/*REFBOOK : Chance
  ++++++++++++++++++++++++++++++++++++++++++
- GRAPHIC SYSTEMS 0.5 (2012)
+ GRAPHIC SYSTEMS 1.0
  AN INTRODUCTORY COURSE TO CREATIVE 
  CODING FOR GRAPHIC DESIGN STUDENTS.
  
- IMPLEMENTED BY THE FREE ART BUREAU 2010/11 
+ IMPLEMENTED BY THE FREE ART BUREAU 2014 
  www.freeartbureau.org
  ++++++++++++++++++++++++++++++++++++++++++
  LES BASES : CHANCE
