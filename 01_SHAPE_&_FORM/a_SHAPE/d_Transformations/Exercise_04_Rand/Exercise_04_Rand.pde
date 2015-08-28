@@ -11,9 +11,6 @@
  TYPE : STATIQUE
  
  SUGGESTIONS :
-
- CHOISIR UNE DES IMAGES DANS LE DOSSIER
- IMAGES ET LE RECREER AVEC PROCESSING
  
  */
 ///////////////////////////////////////
