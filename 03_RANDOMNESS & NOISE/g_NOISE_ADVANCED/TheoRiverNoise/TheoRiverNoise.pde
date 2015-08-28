@@ -1,4 +1,3 @@
-//Theo Calvin (theo at mediumlite dot com)
 /*
 MY COLOR SCHEMES : 
 NATURAL
