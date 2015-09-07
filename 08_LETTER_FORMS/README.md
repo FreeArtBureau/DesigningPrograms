@@ -1,0 +1,1 @@
+Processing has its own class for working with fonts - PFont. However, there are other means of working with letters within Processing. Either considering them as images - hence PImage - or in using the library Geomerative. There are an extensive set of sketches that show some of the possibilities of working with Geomerative. We also work with classes in this chapter. 
