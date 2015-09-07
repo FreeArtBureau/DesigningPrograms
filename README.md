@@ -6,7 +6,7 @@ A series of Processing sketches organised by subject matter and intended for tea
 
 Please note that these sketches are intended as a pedagogical tool kit for teaching code as an approach in graphic design. I use these sketches as part of my course, 'Designing Programs' taught at l'École d'Art et du Design d'Amiens in France. Hence, you'll find comments and perhaps PDF presentations written in French. 
 
-Please read licence with this work. 
+Please read licence with this work. All sketches have been written with Processing 2.2.1 
 
 
 CONTENTS
