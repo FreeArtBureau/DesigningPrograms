@@ -91,3 +91,8 @@ void draw() {
   }
 }
 
+void keyPressed() {
+ if(key=='s')saveFrame("ScreenGrab_###.png"); 
+  
+}
+
