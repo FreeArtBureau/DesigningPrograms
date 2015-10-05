@@ -24,7 +24,7 @@
 
  -------------------------
  NOTES
- Nothing to notify here. Enjoy.
+ HIRES image export no longer works with PV2
  
   -------------------------
     LICENSE

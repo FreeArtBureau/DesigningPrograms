@@ -1,6 +1,6 @@
 /*
 PLEASE READ INFO TAB
-*/
+ */
 
 /////////////////////////// GLOBALS ////////////////////////////
 PFont FONT;
@@ -27,19 +27,19 @@ void setup() {
 void draw() {
   background(255);
   randomSeed(SEED);
-  
+
   textFont(FONT, FONTSIZE+GRIDREZ);
   for (int x=0; x<IMG.width; x+=GRIDREZ) {
     for (int y=0; y<IMG.height; y+=GRIDREZ) {
 
       color c = IMG.get(x, y);
       fill(c);
-      if(RAND1) {
-      char glyph = ShakeMyFont();
-       text(glyph, x, y); 
-      }else {
-      //textFont(FONT,random(1,10));     
-      text((char)random(60, 63), x, y);
+      if (RAND1) {
+        char glyph = ShakeMyFont();
+        text(glyph, x, y);
+      } else {
+        //textFont(FONT,random(1,10));     
+        text((char)random(60, 63), x, y);
       }
     }
   }
@@ -47,30 +47,28 @@ void draw() {
 
 /////////////////////////// FUNCTIONS ////////////////////////////
 void keyPressed() {
-   // Change grid resolution
+  // Change grid resolution
   if (key == CODED) {
     if (keyCode == UP) {
       GRIDREZ++;
-    } 
-    else if (keyCode == DOWN) {
+    } else if (keyCode == DOWN) {
       GRIDREZ--;
     }
     constrain(GRIDREZ, 1, 40);
-    
+
     // Change font size
     if (keyCode == RIGHT) {
       FONTSIZE++;
-    } 
-    else if (keyCode == LEFT) {
+    } else if (keyCode == LEFT) {
       FONTSIZE--;
     }
   }
-  
-  if(key == '1') {
+
+  if (key == '1') {
     RAND1 = !RAND1;
     SEED = (int)random(1000);
   }  
-    if (key == 's') {
+  if (key == 's') {
     save("normal_###.png");
     SaveHiRes(2);
     exit();
@@ -80,15 +78,15 @@ void keyPressed() {
 // Random character function
 char ShakeMyFont() {
   char glyphRand = 0;
-  
+
   int dice = (int)random(4);
   if (dice == 0) {
-    glyphRand = (char)random(65,90);
+    glyphRand = (char)random(65, 90);
   }
-   if (dice == 1) {
+  if (dice == 1) {
     glyphRand = 43;
   }
-   if (dice == 2) {
+  if (dice == 2) {
     glyphRand = 43;
   }
   return glyphRand;
@@ -97,9 +95,11 @@ char ShakeMyFont() {
 // HI_RES OUTPUT - Note that the program exits once this operation has finished. Wait for export !
 void SaveHiRes(int scaleFactor) {
   PGraphics hires = createGraphics(width*scaleFactor, height*scaleFactor, P2D);
-  beginRecord(hires);
+  beginRaw(hires);
   hires.scale(scaleFactor);
   draw();
-  endRecord();
   hires.save("hires_###.png");
+
+  endRaw();
 }
+
