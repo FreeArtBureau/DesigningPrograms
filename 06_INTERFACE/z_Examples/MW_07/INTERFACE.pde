@@ -55,6 +55,17 @@ void initInterface() {
  Slider s9 = INTERFACE.addSlider("NOISE_AMM")
     .setPosition(320,50)
      .setRange(1,600)
-        .setValue(300);        
+        .setValue(300);    
+    
+    // Two bang buttons for invoking two sepearate functions : 
+  // bangSave & bangLoad - see FUNCTIONS TAB
+  Bang b1 = INTERFACE.addBang("bangSave").setPosition(500, 15)
+    .setSize(10, 10).setTriggerEvent(Bang.RELEASE).setCaptionLabel("save")
+    .setColorCaptionLabel(color(0, 0, 255)); // change text colour
+    
+   Bang b2 = INTERFACE.addBang("bangLoad").setPosition(500, 40)
+    .setSize(10, 10).setTriggerEvent(Bang.RELEASE).setCaptionLabel("load")
+    .setColorCaptionLabel(color(0, 0, 255)); 
+      
 }
 

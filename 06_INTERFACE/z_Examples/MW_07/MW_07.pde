@@ -4,6 +4,8 @@
  ----------------------------------------
  */
 
+PrintWriter output; // Used to write data to file
+
 import controlP5.*;
 int pWidth = 1280;
 int pHeight = 720;
