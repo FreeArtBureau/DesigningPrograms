@@ -20,9 +20,10 @@ void setup() {
   background(1, 100, 0);
   size(500, 500);
   smooth();
-  // @params: x & y postions, number of cheese slices, diameter size, rotate, refine
-  myCheese = new Cheese(150, 150, 15, 200, true, 0.005);
-  myCheese2 = new Cheese(300, 250, 73, 170, true, 0.10);
+  // @params: x & y postions, number of cheese slices, gap, diameter size, rotate, refine
+  // gap argument refers to the gap between each arc's edge.
+  myCheese = new Cheese(150, 150, 8, 1.1, 200, true, 0.005);
+  myCheese2 = new Cheese(300, 250, 73, 4.3, 170, true, 0.10);
 }
 
 /////////////////////////// DRAW ////////////////////////////

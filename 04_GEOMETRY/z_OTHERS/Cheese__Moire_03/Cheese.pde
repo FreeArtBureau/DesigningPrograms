@@ -12,6 +12,7 @@
 class Cheese {
   float x, y;
   int numSlices;
+  float edge_gap;
   float dia;
   int hue;
   boolean rotate;
@@ -20,13 +21,14 @@ class Cheese {
 
 
   // @params: x & y postions, number of cheese slices, diameter size, rotate, angle refine
-  Cheese(float _x, float _y, int _numSlices, float _dia, boolean _rotate, float _refine) {
+  Cheese(float _x, float _y, int _numSlices, float _gap, float _dia, boolean _rotate, float _refine) {
     this.x = _x;
     this.y = _y;
     this.numSlices = _numSlices;
     this.dia = _dia;
     this.rotate = _rotate;
     this.rotationRefine = _refine;
+    this.edge_gap = _gap;
     //hue = (int)random(360);
 
   }
@@ -46,24 +48,24 @@ class Cheese {
     fill(0, 0, 100);
 
     float cheeseSlices = TWO_PI/numSlices;
-    float refineLines = 3.0; 
-    //float speed = 0.0035;
+    float refineLines = edge_gap; 
     float yAnime;
+    
     if (ANIME) {
       yAnime = map(sin(frameCount*rotationRefine), -1, 1, 0, 35);
     } else {
       yAnime = 0.0;
     }
+    
     for (int i=0; i<numSlices; i++) {
-
       pushMatrix();
-      translate(x, y); 
+      translate(x, y);
+      
       if (rotate == true) { 
         rotate(frameCount*rotationRefine);
       }
       rotate(i*cheeseSlices);
-
-      arc(0, yAnime, dia/refineLines/2, dia, (PI*2.5)-(cheeseSlices/2), (PI*2.5)+(cheeseSlices/2));
+      arc(0, yAnime, dia/refineLines, dia, (PI*2.5)-(cheeseSlices/2), (PI*2.5)+(cheeseSlices/2));
       popMatrix();
     }
   }
