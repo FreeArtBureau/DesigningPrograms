@@ -15,7 +15,7 @@ PImage IMG;
 int PALETTE_SIZE = 30;
 
 // color parameters
-int MAX_PAL = 400;
+int MAX_PAL = 200;
 int NUM_PAL = 0;
 color[] GOOD_COLOUR = new color[MAX_PAL];
 color MYC;

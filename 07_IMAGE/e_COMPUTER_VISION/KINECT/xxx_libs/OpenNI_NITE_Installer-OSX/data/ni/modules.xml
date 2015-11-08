@@ -1,0 +1,14 @@
+<Modules>
+    <Module path="/usr/lib/libnimMockNodes.dylib" />
+    <Module path="/usr/lib/libnimCodecs.dylib" />
+    <Module path="/usr/lib/libnimRecorder.dylib" />
+    <Module path="/usr/lib/libXnDeviceSensorV2.dylib" configDir="/usr/etc/primesense" />
+    <Module path="/usr/lib/libXnDeviceFile.dylib" configDir="/usr/etc/primesense" />
+    <Module path="/usr/lib/libXnDeviceSensorV2KM.dylib" configDir="/usr/etc/primesense" />
+    <Module path="/usr/lib/libXnVFeatures_1_3_1.dylib" configDir="/usr/etc/primesense/Features_1_3_1" />
+    <Module path="/usr/lib/libXnVHandGenerator_1_3_1.dylib" configDir="/usr/etc/primesense/Hands_1_3_1" />
+    <Module path="/usr/lib/libXnVFeatures_1_4_2.dylib" configDir="/usr/etc/primesense/Features_1_4_2" />
+    <Module path="/usr/lib/libXnVHandGenerator_1_4_2.dylib" configDir="/usr/etc/primesense/Hands_1_4_2" />
+    <Module path="/usr/lib/libXnVFeatures_1_5_2.dylib" configDir="/usr/etc/primesense/Features_1_5_2" />
+    <Module path="/usr/lib/libXnVHandGenerator_1_5_2.dylib" configDir="/usr/etc/primesense/Hands_1_5_2" />
+</Modules>

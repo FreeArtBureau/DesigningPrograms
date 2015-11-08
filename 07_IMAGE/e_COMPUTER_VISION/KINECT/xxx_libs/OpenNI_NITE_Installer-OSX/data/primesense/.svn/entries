@@ -1,0 +1,84 @@
+10
+
+dir
+0
+https://simple-openni.googlecode.com/svn/trunk/SimpleOpenNI/platform/osx/OpenNI_NITE_Installer-OSX/data/primesense
+https://simple-openni.googlecode.com/svn
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+81cd9421-9946-bb5f-ad71-2db49e6c0e5f
+
+.DS_Store
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+Hands_1_5_2
+dir
+
+
+
+add
+
+Features_1_5_2
+dir
+
+
+
+add
+
+GlobalDefaultsKinect.ini
+file
+
+
+
+add
+
+GlobalDefaults.ini
+file
+
+
+
+add
+
+XnVFeatures
+dir
+
+
+
+add
+
+XnVHandGenerator
+dir
+
+
+
+add
+

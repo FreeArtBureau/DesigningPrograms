@@ -15,8 +15,8 @@ void ControlInit() {
   Slider g = INTERFACES.addSlider("INDEXGREEN").setPosition(10, 60).setRange(1, 255).setValue(73); 
   Slider b = INTERFACES.addSlider("INDEXBLUE").setPosition(10, 80).setRange(1, 255).setValue(117); 
 
-  Slider x = INTERFACES.addSlider("TRAMEX").setPosition(10, 120).setRange(1, 20).setValue(1);
-  Slider y = INTERFACES.addSlider("TRAMEY").setPosition(10, 140).setRange(1, 20).setValue(1);
+  Slider x = INTERFACES.addSlider("TRAMEX").setPosition(10, 120).setRange(1, 20).setValue(5);
+  Slider y = INTERFACES.addSlider("TRAMEY").setPosition(10, 140).setRange(1, 20).setValue(5);
 
   //
   //Toggle t = INTERFACES.addToggle("showCercles").setPosition(10,160).setSize(10,10).setValue(true);

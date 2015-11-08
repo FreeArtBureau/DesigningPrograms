@@ -17,7 +17,7 @@ int INDEXRED, INDEXGREEN, INDEXBLUE, TRAMEX, TRAMEY;
 /////////////////////////// SETUP ////////////////////////////
 
 void setup() {
-  size(640, 480);
+  size(640, 480, JAVA2D);
   noStroke();
   ControlInit();
   LINELEN = 10;
