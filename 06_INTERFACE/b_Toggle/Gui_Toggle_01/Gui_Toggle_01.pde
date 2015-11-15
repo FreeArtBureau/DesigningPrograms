@@ -54,6 +54,7 @@ void trameH() {
     for (int yPos=125; yPos<height-100; yPos+=75) {
       fill(0);
       stroke(0);
+      strokeWeight(strokeW);
       pushMatrix();
       translate(xPos, yPos);
       rotate(angle);     

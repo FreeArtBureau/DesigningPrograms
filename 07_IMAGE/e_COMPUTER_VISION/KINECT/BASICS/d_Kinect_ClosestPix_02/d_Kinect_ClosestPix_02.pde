@@ -1,11 +1,17 @@
 /*
-:::::::::::::::
- COMPUTER VISION
- :::::::::::::::
- 
- > KINECT
- Sketch : Kinect_SimpleTrack_02
- Drawing with the hand
+ * :::::::::::::::
+ * COMPUTER VISION
+ * :::::::::::::::
+ *
+ * Kinect ClosestPix_02
+ * Demonstrates how to track closest pixel & draw with this data
+ * Adds interpolation
+ * Demonstrates depthMap method for getting depth data
+ *
+ *
+ * MW_2015
+ * NI version 1.96
+ * end
  */
 
 /////////////////////////// GLOBALS ////////////////////////////
@@ -13,6 +19,7 @@
 import SimpleOpenNI.*;
 SimpleOpenNI  kinect;
 PImage depthImage;
+boolean SHOW_DEPTH_IMG = false; // display image on/off
 
 // Some variables for tracking distance & pos
 int closestVal;
@@ -50,9 +57,6 @@ void draw() {
       // Grab distance for each pixel
       currentDepthVal = kinect.depthMap()[i];
 
-
-
-
       // if that pixel is closest
       if (currentDepthVal>0 && currentDepthVal < closestVal) {
         //save its value
@@ -60,22 +64,27 @@ void draw() {
         // & save its position
         closestX = xPos;
         closestY = yPos;
+
+        println("Closest Pixel distance = "+closestVal);
       }
     }
   }
-  depthImage = kinect.depthImage();   
-  //image(depthImage, 0, 0);
-
+  depthImage = kinect.depthImage(); 
+  if (SHOW_DEPTH_IMG) {  
+    image(depthImage, 0, 0);
+  }
+  // Display closest pixel
   //fill(0, 0, 255);
-  //ellipse(closestX, closestY, fatLine/5, fatLine/5);
+  //ellipse(closestX, closestY, 10, 10);
 
   // INTERPOLATION !!!
   float interpolatedX = lerp(lastX, closestX, 0.1f); 
   float interpolatedY = lerp(lastY, closestY, 0.1f);
   stroke(255, 0, 0);
 
-  float FAT = map(closestVal, 210,1525, 1,50);
-  strokeWeight( FAT );
+  // We can use closestVal data to modify the strokeWeight of our line
+  float FAT = map(closestVal, 480, 800, 1, 150);
+  strokeWeight( abs(FAT) );
   //strokeWeight(2);
 
   line(lastX, lastY, interpolatedX, interpolatedY); 

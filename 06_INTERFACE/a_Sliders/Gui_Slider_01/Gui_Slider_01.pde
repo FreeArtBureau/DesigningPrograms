@@ -9,7 +9,9 @@ Il faut importer la bibliothèque controlP5
 
 /////////////////////////// GLOBALS ////////////////////////////
 import controlP5.*;
+
 ControlP5 interfaces;
+
 int BGColour;
 int RectCol;
 /////////////////////////// SETUP ////////////////////////////
@@ -20,9 +22,8 @@ void setup() {
   smooth();
   rectMode(CENTER);
   interfaces = new ControlP5(this);
-  Slider s1 = interfaces.addSlider("BGColour")
-    .setPosition(100,20)
-      .setRange(0,255);
+  
+  Slider s1 = interfaces.addSlider("BGColour").setPosition(100,20).setRange(0,255);
   
   Slider s2 = interfaces.addSlider("RectCol")
     .setPosition(100,40)
