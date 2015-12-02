@@ -30,8 +30,9 @@ void setup() {
       int x = 50;
   for (int i=0; i < RandomTable.length; i++) {
     fill(RandomTable[i]/2, RandomTable[i]/2, RandomTable[i]/2);
-
-      ellipse(x, 25, 5, 5);
+      
+      float dia = RandomTable[i]/10;
+      ellipse(x, 25, dia, dia);
       rect(x, 400, 25, -RandomTable[i]);
       x+=50;
   }
