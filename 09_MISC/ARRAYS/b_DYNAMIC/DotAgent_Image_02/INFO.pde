@@ -1,13 +1,16 @@
 /*
 
 //////////////////////////
-ARRAY LISTS | CLASS
+DYNAMIC ARRAYS|COLLECTIONS
 //////////////////////////
 
 --------------------------
-Sketch : DOT AGENT IMAGE_01
+Sketch : DOT AGENT IMAGE
 --------------------------
 
+Introduction to the ArrayList in Java
+>>> http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
+   
 
 ************************
 FREE ART BUREAU INFO
