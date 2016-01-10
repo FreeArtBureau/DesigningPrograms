@@ -1,4 +1,5 @@
 // For Processing Version 1.01.
+// Written by Golan Levin : http://www.flong.com/
 import processing.video.*;
 Capture cam;
 int X=0;
