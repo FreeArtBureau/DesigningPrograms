@@ -2,6 +2,7 @@
 // Saves an image from the camera once per second,
 // or at some other user-defined interval.
 // For Processing Version 1.01.
+// Written by Golan Levin : http://www.flong.com/
  
 //----------------------------------------------------------
 // Parameters you can modify
