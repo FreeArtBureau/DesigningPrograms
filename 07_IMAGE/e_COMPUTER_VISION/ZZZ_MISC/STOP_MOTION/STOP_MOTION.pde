@@ -1,6 +1,6 @@
 // TINY STOP-FRAME PROGRAM
 // Saves an image from the camera when a key/mouse is pressed.
-// From Golan Levin
+// Written by Golan Levin : http://www.flong.com/
  
 //----------------------------------------------------------
 // Parameters you can modify:
