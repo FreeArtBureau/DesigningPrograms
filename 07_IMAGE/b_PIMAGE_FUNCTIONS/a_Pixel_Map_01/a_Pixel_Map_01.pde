@@ -31,7 +31,7 @@ void draw() {
     for (int y=1; y<height;y+=pas) {
 
       color c = img.get(x, y);
-
+      // Variable pour déterminer la taille de la forme en fonction de la luminosité du pixel
       float lum = (brightness(c)/255)*fact;
 
       fill(c);
