@@ -21,7 +21,7 @@ void setup() {
 
   // Initialiser geomerative
   RG.init(this);
-  RCommand.setSegmentLength(3);
+  RCommand.setSegmentLength(1);
   a = new RFont("AlteHaasGroteskBold.ttf", 200);
   grp = a.toGroup("GROWTH");
   pnts = grp.getPoints();
@@ -40,6 +40,7 @@ void draw() {
   for (int i=0; i<pnts.length;i++) {
 
     vec[i].render();
+    vec[i].timer();
     //vec[i].update(); // does what ?
    //vec[i].animate1();
    //vec[i].animate2();

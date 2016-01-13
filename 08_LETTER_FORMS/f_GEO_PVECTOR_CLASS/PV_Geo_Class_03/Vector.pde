@@ -10,6 +10,10 @@ class FontAgent {
   float xMove;
   float dia;
   float trans;
+  //Create a timerMax
+  int timer, timerMax;
+  //Create a boolean to check our object's life.
+  boolean death;
 
   // Notre constructeur permet d'initialiser notre objet > instance d'une classe
   // http://www.commentcamarche.net/contents/553-java-constructeurs
@@ -17,12 +21,17 @@ class FontAgent {
     loc = new PVector(x, y);
     vel = new PVector(-0.1, 0.1);
     dia = 2.0;
-    trans = 33;
+    //trans = 0;
+    timer = 0;
+    death = false;
+    this.timerMax = 500;
+    trans = map(timer, 0, timerMax, 15, 0);
+
   }
 
   // Méthode pour dessiner la forme
   void render() {
-    fill(120,255,60, trans);
+    fill(120, 173, 60, trans);
     noStroke(); 
     ellipse(loc.x, loc.y, dia, dia);
   }
@@ -31,7 +40,7 @@ class FontAgent {
   // grâce à notre vecteur vélocité.
   void update() {
     //loc.add(vel);
-    trans-=0.5;
+    //trans-=0.5;
     dia -= 0.05;
   }
 
@@ -49,11 +58,22 @@ class FontAgent {
   }
 
   void animate3() {
-    offX = noise(frameCount+(loc.x*0.05), frameCount+(loc.y*0.05)) * 30.05;
+    offX = noise(frameCount+(loc.x*0.001), frameCount+(loc.y*0.003)) * 373.05;
     //dia+= sin(offX*0.003) * 0.5;
-//    dia-=0.05;
+    //    dia-=0.05;
     loc.x += cos(offX)*0.5;
     loc.y += sin(offX)*0.5;
+  }
+
+  void timer() {
+    timer+=0.9;
+    dia = map(timer, 0, timerMax, 1, 0);
+
+    //Map timer to transparency values between 0 & 255 
+    trans = map(timer, 0, timerMax, 7, 0);
+    if (timer>=timerMax) {
+      death = true;
+    }
   }
 
 
