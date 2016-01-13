@@ -30,8 +30,8 @@ void draw() {
   rectMode(CENTER);
   // On parcourt l'image grâce à une boucle et en fonction
   // de notre varialbe PixelSize ;–)
-  for (int x=0; x < width; x+=PixelSize) {
-    for (int y=0; y < height; y+=PixelSize) {
+  for (int x=10; x < width-10; x+=PixelSize) {
+    for (int y=10; y < height-10; y+=PixelSize) {
 
       // on récupère  la couleur du pixel en fonction des variables x & y
       int col = img.get(x, y);
