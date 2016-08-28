@@ -1,75 +1,12 @@
 /*
- * :::::::::::::::
- * COMPUTER VISION
- * :::::::::::::::
+ * VARIOUS FUNCTIONS
  *
- * Kinect User_Setup_02
- * Demonstrates how to detect users and get different parts of the body
- *
- *
- * 3DSense
- * Links : http://blog.3dsense.org/programming/programming-for-kinect-4-kinect-app-with-skeleton-tracking-openni-2-0/
- * NI version 1.96
- * end
- 
  */
 
-/////////////////////////// GLOBALS ////////////////////////////
 
-import SimpleOpenNI.*; 
+//////////////////////////////////// draws ellipses at various parts of body
 
-SimpleOpenNI  kinect; 
-PImage img;
-
-/////////////////////////// SETUP ////////////////////////////
-void setup() {
-  size(640, 480); 
-  smooth();
-  noStroke();
-  kinect = new SimpleOpenNI(this);
-  kinect.enableDepth(); 
-
-  //asks OpenNI to initialize and start receiving User data
-  kinect.enableUser(); 
-  kinect.setMirror(true);  
-  img=createImage(640, 480, RGB);
-  img.loadPixels();
-}
-
-/////////////////////////// DRAW ////////////////////////////
-void draw() {
-  background(255); 
-  //asks kinect to send new data
-  kinect.update();
-
-  //retrieves depth image
-  PImage depthImage = kinect.depthImage();
-  depthImage.loadPixels();
-
-  //get user pixels - array of the same size as depthImage.pixels, that gives information about the users in the depth image:
-  // if upix[i]=0, there is no user at that pixel position
-  // if upix[i] > 0, upix[i] indicates which userid is at that position
-  int[] upix=kinect.userMap();
-
-  //colorize users
-  for (int i=0; i < upix.length; i++) {
-    if (upix[i] > 0) {
-      //there is a user on that position
-      //NOTE: if you need to distinguish between users, check the value of the upix[i]
-      img.pixels[i]=color(0, 0, 255);
-    } else {
-      //add depth data to the image
-      img.pixels[i]=depthImage.pixels[i];
-    }
-  }
-  img.updatePixels();
-
-  //draws the depth map data as an image to the screen 
-  //at position 0(left),0(top) corner
-  image(img, 0, 0);
-
-  ////////////////////////////////////////// draw significant points of users
-
+void drawUserData() {
   //get array of IDs of all users present 
   int[] users=kinect.getUsers();
 
@@ -78,14 +15,11 @@ void draw() {
   //iterate through users
   for (int i=0; i < users.length; i++) {
     int uid=users[i];
-
     //draw center of mass of the user (simple mean across position of all user pixels that corresponds to the given user)
     PVector realCoM=new PVector();
-
     //get the CoM in realworld (3D) coordinates
     kinect.getCoM(uid, realCoM);
     PVector projCoM=new PVector();
-
     //convert realworld coordinates to projective (those that we can use to draw to our canvas)
     kinect.convertRealWorldToProjective(realCoM, projCoM);
     fill(255, 0, 0);
@@ -108,20 +42,35 @@ void draw() {
       kinect.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_LEFT_HAND, realLHand);
       PVector projLHand=new PVector();
       kinect.convertRealWorldToProjective(realLHand, projLHand);
-      
+
+
+      ///////////////////////////////////////////////////////// DEPTH & POSITIONAL DATA !
       // Get depth data for this hand
+      // the depthmap collects distance data for every pixel in image
       int[] depth = kinect.depthMap();
       int d = 0;
+      // to calculate the position for a pixel we use the formula : y*width+x
+      // this is what we do here, getting the position of the pixel mapped to the 
+     // left hand, then storing that value in our variable 'pos'
       int pos = ((int)projLHand.y*width)+(int)projLHand.x;
-      if(pos>0) {
-      d = depth[pos];
-      println("Left hand distance = "+d);
+      
+      // now we can get the depth/distance value for that pixel
+      if (pos>0) {
+        d = depth[pos];
+        println("Left hand distance = "+d);
       }
       // map depth variable to change size of circle
-      float dia = map(d, 0,2000, 1, 100); 
-      
+      float dia = map(d, 0, 2000, 1, 100); 
+
       fill(255, 255, 0);
       ellipse(projLHand.x, projLHand.y, dia, dia);
+
+      // get positional data for hand too
+      float leftHandPositionX = projLHand.x;
+      float leftHandPositionY = projLHand.y;
+      println("Left hand position = X: "+leftHandPositionX+" Y: "+leftHandPositionY);
+
+      ////////////////////////////////////////////////////////////////////////////
       
       //draw right hand
       PVector realRHand=new PVector();
@@ -134,7 +83,33 @@ void draw() {
   }
 }
 
-/////////////////////////// FUNCTIONS ////////////////////////////
+///////////////////////////////////// gets user data and colours 
+void updateDepthImage() {
+  //retrieves depth image
+  PImage depthImage = kinect.depthImage();
+  depthImage.loadPixels();
+
+  //get user pixels - array of the same size as depthImage.pixels, that gives information about the users in the depth image:
+  // if upix[i]=0, there is no user at that pixel position
+  // if upix[i] > 0, upix[i] indicates which userid is at that position
+  int[] upix=kinect.userMap();
+
+  //colorize users
+  for (int i=0; i < upix.length; i++) {
+    if (upix[i] > 0) {
+      //there is a user on that position
+      //NOTE: if you need to distinguish between users, check the value of the upix[i]
+      img.pixels[i]=color(0, 0, 255);
+    } else {
+      //add depth data to the image
+      img.pixels[i]=depthImage.pixels[i];
+    }
+  }
+  img.updatePixels();
+}
+
+
+/////////////////////////// OTHER FUNCTIONS ////////////////////////////
 
 //is called everytime a new user appears
 void onNewUser(SimpleOpenNI curContext, int userId) {

@@ -15,6 +15,8 @@
  PARENT SKETCH : c_PImage_INTRO_03
  TYPE : DYNAMIQUE 
  **NB
+ 
+ REF : http://www.knowltonmosaics.com/
 
  */
  

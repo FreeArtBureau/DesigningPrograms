@@ -61,7 +61,7 @@ void draw() {
   filter(GRAY); // on a rajouté un filtre noir & blanc
   
   //fact+=0.007;
-  fact=abs(sin(frameCount*0.006)*30.1);
+  fact=abs(sin(frameCount*0.006)*23.35);
  
 }
 /////////////////////////// FUNCTIONS ////////////////////////////

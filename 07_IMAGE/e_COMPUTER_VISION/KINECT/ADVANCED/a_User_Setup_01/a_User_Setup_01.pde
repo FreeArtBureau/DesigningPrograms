@@ -52,6 +52,7 @@ void draw() {
     // If camera detects a user, colour him/her blue
     if (upix[i] > 0) {
       //NOTE: if you need to distinguish between users, check the value of the upix[i]
+      // display user (blue colour)
       img.pixels[i]=color(0, 0, 255);
     } 
     // ...otherwise we simply display the depthImage

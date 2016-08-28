@@ -24,7 +24,7 @@ void setup() {
   colorMode(HSB,360,100,100); // teinte, saturation, luminosité
   smooth();
   noFill();
-  strokeWeight(5);
+  strokeWeight(10);
   x = 0;
   angle = radians(0); // on convertit les radians en angles
 }
@@ -63,4 +63,6 @@ void draw() {
 
 /////////////////////////// FUNCTIONS ////////////////////////////
 
-
+void keyPressed() {
+  if (key == 's' || key == 'S') saveFrame("img_###.png");
+}

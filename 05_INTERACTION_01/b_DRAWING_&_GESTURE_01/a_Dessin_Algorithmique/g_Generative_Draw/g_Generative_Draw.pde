@@ -22,7 +22,7 @@
 // les coordonnées x & y
 FloatList x, y;
 
-float thresh = 15;
+float thresh = 30;
 /////////////////////////// SETUP ////////////////////////////
 
 void setup() {

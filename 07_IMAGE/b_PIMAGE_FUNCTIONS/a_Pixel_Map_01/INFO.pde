@@ -14,7 +14,8 @@
  SKETCH : a_PIXEL_MAPPING_01
  PARENT SKETCH : 
  TYPE : DYNAMIQUE
-
+ 
+ REF : http://www.knowltonmosaics.com/
 
  */
  
