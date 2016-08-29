@@ -1,4 +1,4 @@
-### Designing Programs
+# DESIGNING PROGRAMS
 Processing Sketches for Graphic Designers
 
 
