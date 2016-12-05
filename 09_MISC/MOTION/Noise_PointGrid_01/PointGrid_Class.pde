@@ -1,5 +1,5 @@
 /*
- * General purpose class fro drawing a grid of points
+ * General purpose class for drawing a grid of points
  * Use with PeasyCam
  *
  */
