@@ -53,12 +53,11 @@ void controlInit() {
 
   ///////////////////////////////////////// DROPDOWN LIST [FONTS]
 
-  ListBox d1 = INTERFACES.addListBox("glyphs").setPosition(450, 20).setSize(100, 200);
-
+  ScrollableList d1 = INTERFACES.addScrollableList("glyphs").setPosition(450, 20).setSize(100, 200);
 
   // RAJOUTER NOS ÉLÉMENTS (FONTES) À NOS LISTES
   for (int i=0; i<NUM_ALPHA; i++) { // variable numFontes détérmine le nombre d'éléments dans la liste
-    ListBoxItem lbi = d1.addItem("glyphs "+i, i); // Ajouter première liste
+    ScrollableList lbi = d1.addItem("glyphs "+i, i); // Ajouter première liste
     d1.setColorBackground(0xffff0000);
   }
 }
@@ -92,7 +91,7 @@ void keyPressed() {
 void controlEvent(ControlEvent theEvent) {
 
   if (theEvent.isGroup()) {
-    println(theEvent.group().value()+" from "+theEvent.group());
+    println(theEvent.group().getValue()+" from "+theEvent.group());
   }
 
   //****************************************************
@@ -100,7 +99,7 @@ void controlEvent(ControlEvent theEvent) {
   if (theEvent.isGroup() && theEvent.name().equals("glyphs")) {
 
     // Variable pour changer de fonte 'choix'
-    CHOIX = (int)theEvent.group().value();
+    CHOIX = (int)theEvent.group().getValue();
     println("test "+CHOIX);
 
     if (CHOIX == 0) {
@@ -121,4 +120,3 @@ void controlEvent(ControlEvent theEvent) {
     }
   }
 }
-

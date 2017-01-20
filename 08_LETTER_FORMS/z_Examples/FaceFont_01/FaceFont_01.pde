@@ -17,12 +17,14 @@ PImage img;
 /////////////////////////// SETUP ////////////////////////////
 
 void setup() {
-  size(510, 500);
+  size(600, 720);
   background(255);
   smooth();
   noStroke();
   font = createFont("helvetica",15);
-  img = loadImage("t_only.jpg");
+  img = loadImage("delaunay.jpg");
+  float imageResize = width / img.width;
+  img.resize(int(img.width*imageResize), int(img.height*imageResize));
   //image(img,0,0);
 
   for(int x=0; x<img.width; x+=5) {
@@ -32,7 +34,7 @@ void setup() {
        fill(c);
        
        textFont(font,random(1,10));     
-       text((char)random(65,67),x,y);
+       text((char)random(65,73),x,y);
     }
   }
 

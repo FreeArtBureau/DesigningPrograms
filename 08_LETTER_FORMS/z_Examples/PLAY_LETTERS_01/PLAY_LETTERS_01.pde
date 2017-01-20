@@ -16,6 +16,8 @@ String myText = "TYPE";
 RGroup grp;
 int spacing = 0;
 FontAgent[] vec;
+PImage[] glyphs; // images - Nous avons 26 images !
+
 //////////////////////////////////////////////
 void setup() {
   size(800, 600);
@@ -77,5 +79,3 @@ void draw() {
   }
   popMatrix();
 }
-
-

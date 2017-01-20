@@ -9,7 +9,7 @@ PFont a;
 
 void setup() {
   size(460, 600);
-  textAlign(CENTER, CENTER);
+  //textAlign(CENTER, CENTER);
   textSize(30);
   fill(255);
   a = createFont("helvetica", 42);
@@ -38,4 +38,3 @@ void keyPressed() {
     myText = myText + key;
   }
 }
-
