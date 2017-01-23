@@ -36,17 +36,17 @@ void draw() {
   float mY = map(mouseY, 0, height, -900, 100);
 
   beginShape();
+  strokeWeight(1.3);
   for (int i=0; i<mesPoints.length; i++) {
-    strokeWeight(1.3);
     vertex(mesPoints[i].x, mesPoints[i].y);
 
   }
   endShape(CLOSE);
 
   beginShape();
-  for (int i=0; i<mesPoints.length; i++) {
-    noStroke();//
+    noStroke();
     fill(0,0,255,150);
+  for (int i=0; i<mesPoints.length; i++) {
     vertex(mesPoints[i].x+12, mesPoints[i].y+12);
 
   }

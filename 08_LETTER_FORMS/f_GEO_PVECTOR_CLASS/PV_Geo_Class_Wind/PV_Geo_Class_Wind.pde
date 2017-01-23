@@ -15,7 +15,7 @@ boolean freeze = false;
 /////////////////////////// SETUP ////////////////////////////
 
 void setup() {
-  size(700, 500, OPENGL);
+  size(700, 500);
   background(0);
   smooth();
 
@@ -62,4 +62,3 @@ void keyPressed() {
     noLoop(); 
   else loop();
 }
-

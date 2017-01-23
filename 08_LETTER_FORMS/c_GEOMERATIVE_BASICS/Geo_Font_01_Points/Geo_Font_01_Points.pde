@@ -8,7 +8,7 @@ import geomerative.*;
 
 RFont font;
 RPoint[] myPoints;
-String myText = "Points on Outline";
+String myText = "GEOMERATIVE";
 
 /////////////////////////// SETUP ////////////////////////////
 void setup() {
@@ -23,7 +23,7 @@ void setup() {
   translate(width/2, height/1.8);
 
   //CONFIGURE SEGMENT LENGTH AND MODE
-  RCommand.setSegmentLength(10);
+  RCommand.setSegmentLength(2);
   //GROUP TOGETHER MY FONT & TEXT.
   RGroup myGroup = font.toGroup(myText);  
   //ACCESS POINTS ON MY FONT/SHAPE OUTLINE
@@ -31,7 +31,7 @@ void setup() {
 
   //DRAW ELLIPSES AT EACH OF THESE POINTS
   for (int i=0; i<myPoints.length; i++) {
-    ellipse(myPoints[i].x, myPoints[i].y, 5, 5);
+    ellipse(myPoints[i].x, myPoints[i].y, 1, 1);
   }
 }
 
@@ -41,4 +41,3 @@ void draw() {
 }
 
 //////////////////////////////////////////////
-

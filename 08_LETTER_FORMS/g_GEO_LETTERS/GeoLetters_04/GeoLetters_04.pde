@@ -75,6 +75,7 @@ void draw() {
   
   //C.polygonize();
   C.display();
+  C.linearMotion(0, 1.0);
   
   // UPDATE TIMER & END RECORD 
   if (TIMER ) {
