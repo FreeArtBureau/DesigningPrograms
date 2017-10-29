@@ -12,7 +12,7 @@ Please read licence with this work. All sketches have been written with Processi
 CONTENTS
 ========
 
-- 01_SHAPE & FORM
+- [01_SHAPE & FORM](https://github.com/FreeArtBureau/DesigningPrograms/tree/master/01_SHAPE_%26_FORM)
 - 02_SUPERFORMS
 - 03_RANDOMNESS & NOISE
 - 04_GEOMETRY
