@@ -25,7 +25,7 @@ void setup() {
   a = new RFont("AlteHaasGroteskBold.ttf", 200);
   grp = a.toGroup("GROWTH");
   pnts = grp.getPoints();
-  
+
   // Initialiser nos vecteurs
   vec = new FontAgent[pnts.length];
   for (int i=0; i<pnts.length;i++) {
@@ -53,17 +53,16 @@ void draw() {
 void keyPressed() {
   if (key == 'f') freeze = !freeze;
   if (freeze)
-    noLoop(); 
+    noLoop();
   else loop();
-  
+
     if (key == 'e' || key == 'E') {
      beginRecord(PDF, "PDF_Export_###.pdf");
   }
-  
+
       if (key == 'r' || key == 'R') {
      endRecord();
     println("FINITO!");
   }
-  
-}
 
+}

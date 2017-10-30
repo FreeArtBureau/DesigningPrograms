@@ -23,7 +23,7 @@ String word;
 
 void setup() {
   size(900, 400);
-  background(0); 
+  background(0);
   strokeWeight(0.3);
   smooth();
 
@@ -52,15 +52,15 @@ void draw() {
   background(0, 150);
   fill(0, 33);
   rect(0, 0, width, height);
-  
+
   fill(255);
   text(tx, 20, 40); // interface text
   translate(width/2, 250);
 
   // var for effect scale
   float nAmm = map(mouseX, 0, width, 1, 200);
-  
-  
+
+
   for (int i=0; i<myPoints.length; i++) {
 
     // different animation modes :
@@ -124,4 +124,3 @@ String initText() {
   if (key == '4') word = r;
   return word;
 }
-

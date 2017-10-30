@@ -47,7 +47,7 @@ void draw() {
   translate(width/2, height/1.4);
 
   if (index<pnts.length-1) {
-    
+
     float dia = sin(frameCount * diaFreq) * diaMax;
     vec[index].render(dia);
     index+=step;
@@ -56,10 +56,9 @@ void draw() {
 
 /////////////////////////// FUNCTIONS ////////////////////////////
 void keyReleased() {
-  if (key == 'f') 
+  if (key == 'f')
     stopAnime = !stopAnime;
   if (stopAnime == true)
-    noLoop(); 
+    noLoop();
   else loop();
 }
-

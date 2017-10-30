@@ -1,19 +1,17 @@
 /*
 
-Parsing words from an external text file 
+Parsing words from an external text file
 */
 
 
 String[] theText;
 PFont times;
-float[] x = new float[0];
-float[] y = new float[0];
-int pos;
+
 
 void setup() {
 
-  size(800, 600); 
-  times = createFont("helvetica", 11);
+  size(800, 600);
+  times = createFont("Fira-sans", 11);
   textFont(times);
   //textMode(SCREEN);   //to apply transformations to text, use the default mode
   theText = new String[0];
@@ -42,7 +40,7 @@ void draw() {
 
 void loadTextfile() {
   String[] lines;
-  lines = loadStrings("poem.txt");
+  lines = loadStrings("tweets.txt");
   println("there are " + lines.length + " lines");
   for (int i=0; i < lines.length; i++) {
     String[] words=splitTokens(lines[i]);
@@ -60,4 +58,3 @@ void loadRandomNumbers() {
     y[i]=random(height);
   }
 }
-

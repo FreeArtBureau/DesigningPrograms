@@ -10,15 +10,17 @@ PImage img;// Déclaration d’une variable du type PImage
 
 /////////////////////////// SETUP ////////////////////////////
 
-void setup() {
-  background(255);
-  noStroke();
-  
+void settings() {
   // Charger l'image dans la mémoire
   // Cette image doit exister dans un dossier 'data' à la racine
   // du sketch Processing
   img = loadImage ("japaneselady.jpg"); 
-     size(img.width, img.height);
+  size(img.width, img.height);
+}
+
+void setup() {
+  background(255);
+  noStroke();
 }
 
 /////////////////////////// DRAW ////////////////////////////
@@ -26,7 +28,6 @@ void draw() {
 
   // Cette fonction est nécessaire pour charger les pixels
   // dans la mémoire
-  img.loadPixels(); // On a aussi besoin de charger les pixels de la caméra
   loadPixels();
   for (int x=0; x<img.width-1; x++) {
     for (int y=0; y<img.height-1; y++) {
@@ -42,8 +43,6 @@ void draw() {
   }
 
   // On a besoin de mettre à jour l'affichage des pixels
-  // grace à ces fonctions
-  img.updatePixels();
+  // grace à cette fonction
   updatePixels();
 }
-

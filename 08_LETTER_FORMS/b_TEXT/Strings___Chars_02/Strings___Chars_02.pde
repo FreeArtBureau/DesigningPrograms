@@ -1,7 +1,7 @@
 /*
  SKETCH : STRINGS & CHARS
  PLEASE READ INFO TAB
- 
+
  */
 
 ////////////////////////// GLOBALS //////////////////////////////
@@ -35,8 +35,8 @@ void setup() {
 }
 
 
-void draw() { 
-  //background(243); 
+void draw() {
+  //background(243);
 
   drawTextByLetter();
 }
@@ -62,7 +62,7 @@ void drawTextByLetter() {
     index++;
        x+=17;
       //x+= textWidth(joinedText.charAt(index-1));
-  } 
+  }
   if (index == joinedText.length()) {
     index = joinedText.length()-1;
   }
@@ -75,23 +75,5 @@ void drawTextByLetter() {
 }
 
 void mousePressed() {
- setup(); 
+ setup();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

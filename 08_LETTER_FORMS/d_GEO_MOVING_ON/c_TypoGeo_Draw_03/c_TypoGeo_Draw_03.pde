@@ -8,10 +8,10 @@
 import geomerative.*;
 
 RFont font;
-String myText = "ATHEN";
+String myText = "A";
 int xIndex, yIndex;
-int step = 1;
-int len = 40;
+int step = 5;
+int len = 100;
 boolean stopAnime = false;
 
 /////////////////////////// SETUP ////////////////////////////
@@ -20,7 +20,7 @@ void setup() {
   background(0);
   smooth();
   RG.init(this);
-  font = new RFont("AnonymousPro-Bold.ttf", 260, CENTER);
+  font = new RFont("AnonymousPro-Bold.ttf", 360, CENTER);
 }
 
 
@@ -35,12 +35,12 @@ void draw() {
   RGroup myGroup = font.toGroup(myText);
   RPoint[] myPoints = myGroup.getPoints();
 
-  // Calculate distance between 
+  // Calculate distance between
   float d = dist(myPoints[xIndex+len].x, myPoints[xIndex].y, myPoints[xIndex].x, myPoints[xIndex+len].y);
 
   if ((xIndex<myPoints.length-1)&&(yIndex<myPoints.length-1)) {
 
-    if (d <=len+1) { 
+    if (d <=len+1) {
       stroke(255);
       strokeWeight(0.6);
       line(myPoints[xIndex+len].x, myPoints[yIndex].y, myPoints[xIndex].x, myPoints[yIndex+len].y);
@@ -60,10 +60,9 @@ void draw() {
 
 /////////////////////////// FUNCTIONS ////////////////////////////
 void keyReleased() {
-  if (key == 'f') 
+  if (key == 'f')
     stopAnime = !stopAnime;
   if (stopAnime == true)
-    noLoop(); 
+    noLoop();
   else loop();
 }
-

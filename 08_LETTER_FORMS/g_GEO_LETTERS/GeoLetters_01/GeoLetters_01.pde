@@ -26,7 +26,7 @@ void setup() {
   yDiff2 = height/1.5;
   xDiff2 = width/2;
   angle = 0;
-  RG.init(this); 
+  RG.init(this);
   font = new RFont("saxmono.ttf", 400, CENTER);
 }
 
@@ -43,15 +43,15 @@ void draw() {
 
   //CONFIGURE SEGMENT LENGTH AND MODE
   RCommand.setSegmentLength( 1 );
-  
+
   //GROUP TOGETHER MY FONT & TEXT.
-  RGroup myGroup = font.toGroup(myText); 
-  
+  RGroup myGroup = font.toGroup(myText);
+
   //ACCESS POINTS ON MY FONT/SHAPE OUTLINE
   RPoint[] myPoints = myGroup.getPoints();
-  
+
   //DRAW ELLIPSES AT EACH OF THESE POINTS
-  for (int i=0; i<myPoints.length; i++) {    
+  for (int i=0; i<myPoints.length; i++) {
     ellipse(myPoints[i].x, myPoints[i].y, 1, 1);
   }
   popMatrix();
@@ -77,4 +77,3 @@ void keyPressed() {
     setup();
   }
 }
-
