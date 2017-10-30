@@ -7,22 +7,23 @@
 PImage source;       // Source image
 PImage destination;  // Destination image
 
-void setup() {
-
-  source = loadImage("japaneselady.jpg");  
+void settings(){
+    source = loadImage("japaneselady.jpg");  
   // On va créer une nouvelle PImage vierge de la même taille que celle de source
   // 
   destination = createImage(source.width, source.height, RGB);
     size(source.width, source.height);
+  
+}
+
+void setup() {
+
+
 }
 
 void draw() {  
   float threshold = map(mouseX, 0, width, 0, 255);
 
-  // Charger les pixels 
-  source.loadPixels();
-  destination.loadPixels();
-  
   for (int x = 0; x < source.width; x++) {
     for (int y = 0; y < source.height; y++ ) {
       int pos = x + y*source.width;
