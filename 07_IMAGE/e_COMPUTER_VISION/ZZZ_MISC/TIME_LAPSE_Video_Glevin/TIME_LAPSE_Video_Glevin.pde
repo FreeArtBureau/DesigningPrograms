@@ -17,9 +17,12 @@ long    lastCaptureTime = 0;
 int     saveCount = 0;
  
 //----------------------------------------------------------
+void settings(){
+   myCapture = new Capture(this, videoWidth,videoHeight);
+  size(myCapture.width,myCapture.height); 
+}
+
 void setup(){
-  myCapture = new Capture(this, videoWidth,videoHeight);
-  size(myCapture.width,myCapture.height);
   myCapture.start();
 }
  

@@ -14,8 +14,7 @@ void setup() {
   smooth();
   noStroke();
   img = loadImage("japaneselady.jpg");
-
-  size(img.width, img.height); 
+  size(500, 500); 
  
 }
 

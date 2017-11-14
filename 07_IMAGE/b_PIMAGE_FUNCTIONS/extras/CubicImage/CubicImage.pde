@@ -6,17 +6,19 @@
 
 PImage img;
 int cellSize; // Taille de nos carrés
-int dec = 10; // Valeur de décalage de nos carrés
+int dec = 50; // Valeur de décalage de nos carrés
 boolean freeze;
 
 /////////////////////////// SETUP ///////////////////////////  /
-
+void settings(){
+  img=loadImage("japaneselady.jpg");
+  size(img.width, img.height); 
+}
 void setup() {
   background(225);
   tint(255, 150); // Transparence de l'image
   freeze = false;
-  img=loadImage("japaneselady.jpg");
-  size(img.width, img.height);
+ 
   smooth();
 }
 
@@ -60,4 +62,3 @@ void keyReleased() {
    
   }
 }
-

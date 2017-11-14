@@ -9,7 +9,7 @@ int pas;
 
 void setup() {
   img = loadImage("japaneselady.jpg");  
-      size(img.width, img.height, P3D);  // P3D est un mode spéciale qui permet une rendue en 3 dimensions
+      size(500, 500, P3D);  // P3D est un mode spéciale qui permet une rendue en 3 dimensions
       noStroke();
 
       rectMode(CENTER);
@@ -68,5 +68,3 @@ void draw() {
 void keyReleased() {
   if (key == 's' || key == 'S') saveFrame("img_###.png");
 }
-
-

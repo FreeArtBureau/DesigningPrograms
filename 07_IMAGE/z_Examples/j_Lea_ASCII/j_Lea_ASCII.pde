@@ -15,7 +15,7 @@ float yDiv;
  
 void setup(){
   img = loadImage("japaneselady.jpg");
-  size(img.width,img.height);
+  size(500,500);
   font = createFont("ArialMT-10",12);
   xDiv = img.width/devisions;
   yDiv = img.height/devisions;
@@ -49,4 +49,3 @@ void keyPressed() {
   }
   constrain(devisions,1,99);
 }
-

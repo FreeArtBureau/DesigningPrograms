@@ -16,9 +16,11 @@ int     saveCount = 0;
 boolean bDoSave = false;
  
 //----------------------------------------------------------
+void settings(){
+   myCapture = new Capture(this, videoWidth,videoHeight);
+  size(myCapture.width,myCapture.height); 
+}
 void setup(){
-  myCapture = new Capture(this, videoWidth,videoHeight);
-  size(myCapture.width,myCapture.height);
   previousImage = new PImage(myCapture.width,myCapture.height);
   myCapture.start();
 }
