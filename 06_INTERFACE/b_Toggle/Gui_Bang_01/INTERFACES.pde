@@ -3,7 +3,7 @@ void controlInit() {
  
   // Change interface default disply font
   PFont p = createFont("ariel", 12);
-  interfaces.setControlFont(p); 
+ // interfaces.setControlFont(p); 
 
   Slider s = interfaces.addSlider("lineLn").setPosition(10, 20).setRange(0, 100).setValue(20.0);
   ;

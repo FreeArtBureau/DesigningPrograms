@@ -4,7 +4,7 @@ PLEASE READ INFO TAB
 
 
 /////////////////////////// GLOBALS ////////////////////////////
-import processing.opengl.*;
+
 import geomerative.*;
 RFont a;
 RGroup grp;

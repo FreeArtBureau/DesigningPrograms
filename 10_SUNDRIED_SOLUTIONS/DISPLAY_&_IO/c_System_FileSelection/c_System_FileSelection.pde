@@ -10,20 +10,36 @@
  */
 
 /////////////////////////// GLOBALS ////////////////////////////
+import controlP5.*;
 import java.awt.*;
+ControlP5 cp5;
 PImage IMG;
 /////////////////////////// SETUP ////////////////////////////
 
 void setup() {
   background(0);
-  size(100, 100);
+  size(500, 300);
+  cp5 = new ControlP5(this);
   smooth();
   noStroke();
-  selectInput("Choose an image", "fileSelected");
-  frame.setResizable(true); // manual resize of window with mouse
+  
+  //frame.setResizable(true); // manual resize of window with mouse
   // Set minimum window size
-  Dimension d = new Dimension(200, 200);
-  frame.setMinimumSize(d);
+  //Dimension d = new Dimension(200, 200);
+  //frame.setMinimumSize(d);
+  
+  PImage img = loadImage("button.png");
+  img.resize(40,40);
+
+   cp5.addBang("bang")
+     .setPosition(40, 30)
+     .setSize(40, 40)
+     //.setImage(img)
+     .setTriggerEvent(Bang.RELEASE)
+     .setLabel("load image")
+     //.updateSize()
+     ;
+     
 }
 
 /////////////////////////// DRAW ////////////////////////////
@@ -41,10 +57,14 @@ void fileSelected(File selection) {
     println("User selected " + selection.getAbsolutePath());
     String s = selection.getAbsolutePath();
     IMG = loadImage(s);
-    frame.setTitle("New image from "+s);
+    //frame.setTitle("New image from "+s);
   }
 
-  frame.resize(IMG.width, IMG.height);
-  size(IMG.width, IMG.height);
+  frame.setSize(IMG.width, IMG.height);
+  //size(IMG.width, IMG.height);
 }
 
+public void bang() {
+  println("a button event from button: "+theValue);
+  selectInput("Choose an image", "fileSelected");
+}

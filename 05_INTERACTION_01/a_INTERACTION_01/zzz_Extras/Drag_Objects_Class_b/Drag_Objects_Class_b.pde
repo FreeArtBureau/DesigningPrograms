@@ -1,4 +1,5 @@
 /*
+West World
 Example of how to use the click & drag class
 
 */
@@ -46,4 +47,3 @@ void mouseReleased() {
     objects[i].stopDragging();
   }
 }
-

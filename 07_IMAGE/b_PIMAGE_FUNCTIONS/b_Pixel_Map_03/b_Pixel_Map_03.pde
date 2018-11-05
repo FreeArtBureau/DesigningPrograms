@@ -24,7 +24,7 @@ void setup() {
   shapeMode(CENTER);
   pas = 10;
   shapeMaxSize = 50;
-  size(img.width, img.height, JAVA2D);
+  size(500, 500, JAVA2D);
   fact = 9.6;
 }
 
@@ -68,4 +68,3 @@ void draw() {
 void keyPressed() {
   if (key == 's') saveFrame("savedImage_###.png");
 }
-

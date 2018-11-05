@@ -17,11 +17,11 @@
  */
  
 /////////////////////////// GLOBALS ////////////////////////////
-import processing.opengl.*;
+
 /////////////////////////// SETUP ///////////////////////////  /
 
 void setup() {
-  size(800, 500, OPENGL);
+  size(800, 500, P3D);
 }
 
 
@@ -56,4 +56,3 @@ void draw() {
   }
 //  println(frameCount);
 }
-

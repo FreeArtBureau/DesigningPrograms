@@ -41,6 +41,6 @@ color getPixel(PImage getImg, int x, int y) {
   if((x<0) || (y<0) || (x>getImg.width) || (y>getImg.height)) {
    return color(0,0,0); 
   }
-  int pos = (y*getImg.width) + x; // mess around with these values to get interesting results
+  int pos = (y*getImg.width) + x;
   return(getImg.pixels[pos]);  
 }

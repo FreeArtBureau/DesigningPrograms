@@ -23,7 +23,7 @@ void setup() {
   shapeMode(CENTER);
   pas = 10;
   shapeMaxSize = 50;
-  size(img.width, img.height, JAVA2D);
+  size(500, 500, JAVA2D);
 }
 
 /////////////////////////// DRAW ////////////////////////////

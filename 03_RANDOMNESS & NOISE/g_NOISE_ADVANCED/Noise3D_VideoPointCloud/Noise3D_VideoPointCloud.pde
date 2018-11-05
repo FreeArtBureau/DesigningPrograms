@@ -1,25 +1,7 @@
-///////////////////////////////////////
- ++++++++++++++++++++++++++++++++++++++++++
-  GRAPHIC SYSTEMS 1.0
- AN INTRODUCTORY COURSE TO CREATIVE 
- CODING FOR GRAPHIC DESIGN STUDENTS.
- 
- IMPLEMENTED BY THE FREE ART BUREAU 2014 
- www.freeartbureau.org
- ++++++++++++++++++++++++++++++++++++++++++
- LES BASES : CHANCE
- SKETCH : 3D NOISE_03
- PARENT SKETCH : 3D NOISE_02
- TYPE : AUTONOME
- 
- **NB
- IN THIS SKETCH WE ADD A MORE ORGANIC MOVEMENT WITH SIN FUNCTIONS
- BASED ON A SKETCH BY ANDREAS GYSIN
- */
- 
+
 /////////////////////////// GLOBALS ////////////////////////////
 import processing.video.*;
-import processing.opengl.*;
+//import processing.opengl.*;
 
 Capture cam;
 

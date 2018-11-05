@@ -3,32 +3,34 @@
 /////////////////////////// GLOBALS ////////////////////////////
 
 PImage img;
-float angle;
+color col;
+int pix = 0;
+
 
 /////////////////////////// SETUP ////////////////////////////
 void setup() {
-  size(400,600);
+  size(400,300);
   background(0);
   smooth();
-  imageMode(CENTER);
+ 
   img = loadImage ("circles.jpg");
-  angle = radians(0);
+  
 }
 
 /////////////////////////// DRAW ////////////////////////////
 void draw() {
 
-  if (mousePressed) {
-    // En combinant sinus avec la fonction noise
-    // on peut créer des variantes aléatoires plus organiques.
-    // Ici on crée une variable qui va jouer sur l'amplitude
-    float amp = noise(mouseX*0.003, mouseY*0.003) * 100;
-    
-    float randSize = sin(angle*0.1) * amp;
-    
-    image(img,mouseX,mouseY,randSize,randSize);  
-  
-    angle+=0.1;  
-  }
-}
 
+    image(img,0,0);
+    col = img.get(pix, y);
+    float red = red(col);
+    println(red);
+    pix = pix+1;
+    if(pix>400){
+     pix = 0;
+     y+=1;
+    }
+  
+  
+
+}

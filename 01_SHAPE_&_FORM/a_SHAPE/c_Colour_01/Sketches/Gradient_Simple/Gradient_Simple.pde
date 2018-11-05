@@ -10,7 +10,6 @@ color b1, b2;
 
 void setup() {
   size(400, 400);
-  //background(0);
   smooth();
   noFill();
   b1 = color(255,0, 0); //ASSIGN BLACK TO b1
@@ -25,13 +24,10 @@ void draw() {
     
     //LINEAR INTERPOLATE FROM b1 TO b2 AT INCREMENT DETERMINED BY VAR inter.
     color c = lerpColor(b1, b2, inter);
-    //stroke(c);
     noStroke();
-    //line(0, i, width, i);
-    fill(c);
-    rect(i, 200, 50, 50);
+    stroke(c);
+    line(0, i, width, i);
   }
 }
 
 /////////////////////////// FUNCTIONS ////////////////////////////
-

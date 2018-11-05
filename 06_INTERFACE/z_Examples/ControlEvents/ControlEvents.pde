@@ -1,53 +1,48 @@
-/**
- * ControlP5 ControlEvent.
- * every control event is automatically forwarded 
- * to the function controlEvent(ControlEvent)
- * inside a sketch if such function is available.
- *
- * This sketch also demonstrates how we can set values from a text field box
- * as well as set ids
- *
+/*
+----------------------------------------
+ PLEASE READ INFO TAB FOR ALL INFORMATION
+ ----------------------------------------
  */
 
-import controlP5.*;
+/////////////////////////// GLOBALS ////////////////////////////
 
-ControlP5 cp5;
+import controlP5.*;
+ControlP5 interfaces;
 
 Knob myKnobA;
 color colorRect;
-color c = color(0,0,255);
+color c = color(0, 0, 255);
 float angle;
-
+/////////////////////////// SETUP ////////////////////////////
 
 void setup() {
   size(400, 400);
   noStroke();
   rectMode(CENTER);
-  cp5 = new ControlP5(this);
+  interfaces = new ControlP5(this);
 
-  cp5.addSlider("colorRect")
+  interfaces.addSlider("colorRect")
     .setPosition(20, 20)
-    .setValue(73)
-    .setSize(100, 20)
-    .setMin(0)
-    .setMax(255)
-    .setId(2);
+    .setRange(0, 255)
+    .setValue(255)
+    .setSize(100, 20);
 
-  cp5.addTextfield("n1")
+  interfaces.addTextfield("txt1")
     .setPosition(20, 60)
     .setSize(100, 20)
     .setLabel("Angle")
-    .setId(3);
-    
-  myKnobA = cp5.addKnob("angle")
-            .setPosition(20, 110)
-            .setRange(0, 360)
-            .setValue(0)
-            .setRadius(25)
-            .setId(1)
-            .setDragDirection(Knob.HORIZONTAL);
+    .setId(2);
+
+  interfaces.addKnob("angle")
+    .setPosition(20, 110)
+    .setRange(0, 360)
+    .setValue(0)
+    .setRadius(25)
+    .setId(1)
+    .setDragDirection(Knob.VERTICAL);
 }
 
+/////////////////////////// DRAW ////////////////////////////
 void draw() {
   background(0);
   fill(colorRect);
@@ -57,22 +52,22 @@ void draw() {
 
   rect(0, 0, 170, 170);
   popMatrix();
-  
-  //throw new RuntimeException("This is an error message");
 }
 
+
+/////////////////////////// FUNCTIONS ////////////////////////////
+
 // set values to knob controller from text field
-void n1(String _val) {
-  Knob k = ((Knob)cp5.getController("angle"));
+void txt1(String _val) {
+  Knob k = ((Knob)interfaces.getController("angle"));
   k.setValue(float(_val));
 }
 
-
+// Listens for Controller events
 void controlEvent(ControlEvent theEvent) {
-  println("got a control event from controller with id "+theEvent.getController().getId());
-
-  if (theEvent.isFrom(cp5.getController("n1"))) {
-    println("this event was triggered by Controller n1");
+  //println("got a control event from controller with id "+theEvent.getController().getId());
+  if (theEvent.isFrom(interfaces.getController("txt1"))) {
+    println("this event was triggered by Controller txt1");
   }
 }
 

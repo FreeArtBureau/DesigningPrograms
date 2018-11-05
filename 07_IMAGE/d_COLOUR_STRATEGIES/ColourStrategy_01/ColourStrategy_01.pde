@@ -21,7 +21,7 @@ void setup() {
   noStroke();
   rectMode(CENTER);
   IMG = loadImage("readTheSourceLuke.jpg");
-  size(IMG.width, IMG.height);
+  size(800, 620);
   //image(IMG, 0, 0);
   SEED = 1000;
 
