@@ -2,11 +2,11 @@
 Processing Sketches for Graphic Designers
 
 
-A series of Processing sketches organised by subject matter and intended for teaching graphic designers the basics of programming. It will also include a set of tools that may prove useful in working with code for mainly print based graphic projects. 
+A series of Processing sketches organised by subject matter and intended for teaching graphic designers the basics of programming. It will also include a set of tools that may prove useful in working with code for mainly print based graphic projects.
 
-Please note that these sketches are intended as a pedagogical tool kit for teaching code as an approach in graphic design. I use these sketches as part of my course, 'Designing Programs' taught at l'École d'Art et du Design d'Amiens in France. Hence, you'll find comments and perhaps PDF presentations written in French. 
+Please note that these sketches are intended as a pedagogical tool kit for teaching code as an approach in graphic design. I use these sketches as part of my course, 'Designing Programs' taught at l'École d'Art et du Design d'Amiens in France. Hence, you'll find comments and perhaps PDF presentations written in French.
 
-Please read licence with this work. All sketches have been written with Processing 2.2.1 
+Please read licence with this work. All sketches have been written with Processing 2.2.1
 
 
 CONTENTS
@@ -26,10 +26,7 @@ CONTENTS
 
 # UPDATE
 
-I have a new repository for my course that introduces the fundamentals of programming. My intention with this new repository is to provide a concise set of pedagogical sketches that serve as examples for five main programming concepts: variables/functions/control/iteration/classes. 
+I have a new repository for my course that introduces the fundamentals of programming. My intention with this new repository is to provide a concise set of pedagogical sketches that serve as examples for five main programming concepts: variables/functions/control/iteration/classes.
 
-* [Fundamentals: Code source](https://github.com/FreeArtBureau/fundamentals) 
-This repository is written in French. 
-
-* [Fundamentals: version P5js](https://freeartbureau.github.io/DP_000/index.html)
-The web site is in French.
+* [Fundamentals: Code source](https://github.com/FreeArtBureau/fundamentals)
+This repository is written in French.
