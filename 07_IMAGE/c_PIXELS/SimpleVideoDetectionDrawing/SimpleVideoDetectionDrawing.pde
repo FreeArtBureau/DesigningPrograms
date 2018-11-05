@@ -20,7 +20,7 @@ void setup() {
   // This is a nifty way to see what cameras are connected to the puter
   //printArray(Capture.list()); 
   // We can then choose one of these when we create a new cam object
-  cam = new Capture(this, width, height, "FaceTime HD Camera (Built-in)", 30);
+  cam = new Capture(this, width, height, 30);
   cam.start();
 }
 
@@ -47,4 +47,3 @@ updatePixels();
 
 
 /////////////////////////// FUNCTIONS ////////////////////////////
-

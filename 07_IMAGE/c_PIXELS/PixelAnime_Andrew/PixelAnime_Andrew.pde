@@ -1,5 +1,3 @@
-import processing.opengl.*;
-
 /*
 CODE FROM ANDREW GLASSNER'S BOOK
 PROCESSING FOR VISUAL ARTISTS.
@@ -11,7 +9,7 @@ int Speed = 200;
 float NumLayers = 37.0;
 
 void setup() {
-  size(Wsize,Wsize, OPENGL);
+  size(300,300, P3D);
 }
 
 void draw() {
@@ -46,4 +44,3 @@ void draw() {
   updatePixels();//UPDATE HERE THE PIXELS
   //println(frameRate);
 }
-
